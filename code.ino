@@ -18,11 +18,6 @@ void setup()
 void loop() 
 {  
   VerificarSequencia();
-  
-  if(posicaoSequencia > 5){
-    Serial.println(posicaoSequencia);
-    posicaoSequencia -= posicaoSequencia;
-  }
 }
 
 
@@ -62,19 +57,8 @@ void SequenciaDois(int SecondDelay)
 
 void VerificarSequencia()
 {
-  if(digitalRead(botao) == HIGH)
-  {
-    posicaoSequencia += 1;
-
-    if(posicaoSequencia == 6)
-    {
-      posicaoSequencia = 0;
-    }
-    
-    Serial.println(posicaoSequencia);
-  }
-
-
+  if(digitalRead(botao) == HIGH){posicaoSequencia += 1; Serial.println(posicaoSequencia);}
+  
    switch(posicaoSequencia)
   {
     case 1:
@@ -97,4 +81,5 @@ void VerificarSequencia()
     SequenciaDois(500);
     break;
   }
-}
+  if(posicaoSequencia > 5){ posicaoSequencia = 0; Serial.println(posicaoSequencia);} 
+  }
