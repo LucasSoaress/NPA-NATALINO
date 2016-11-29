@@ -1,64 +1,39 @@
-int botao = 6;
-int leds[]{2,3,4,5};
+int botao = 2;
+int ledA = 3;
+int ledB = 4;
+int ledC = 5;
+int ledD = 6;
 int posicaoSequencia;
 
 void setup() 
 {
   posicaoSequencia = 0;
   pinMode(botao,INPUT);
-  Serial.begin(9600);
- 
-  for(int i = 0; i<4; i++)
-  {
-    pinMode(leds[i],OUTPUT);
-  } 
+
+  pinMode(botao, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(botao), MudaSequencia, RISING);
+    
+  pinMode(ledA,OUTPUT);
+  pinMode(ledB,OUTPUT);
+  pinMode(ledC,OUTPUT);
+  pinMode(ledD,OUTPUT);
 }
 
+void MudaSequencia()
+{
+	if (posicaoSequencia > 5)
+	{
+	  posicaoSequencia = 0; 
+	}
+	else
+	{
+	  posicaoSequencia += 1; 
+	}
+ 
+}
 
 void loop() 
-{  
-  VerificarSequencia();
-}
-
-
-void Sequencia(int delayTime)
 {
-  for(int i = 0; i < 4; i++)
-  {
-    digitalWrite(leds[i],HIGH);
-  }
-
-  delay(delayTime);
-
-  for(int i = 0; i < 4; i++)
-  {
-    digitalWrite(leds[i],LOW);
-  }
-
- delay(delayTime);
-}
-
-
-void SequenciaDois(int SecondDelay)
-{
-  for(int i = 0; i<4; i++)
-  {
-   digitalWrite(leds[i],HIGH);
-   delay(SecondDelay); 
-  }
-
-  for(int i = 0; i<4; i++)
-  {
-    digitalWrite(leds[i],LOW);
-    delay(SecondDelay);
-  }
-}
-
-
-void VerificarSequencia()
-{
-  if(digitalRead(botao) == HIGH){posicaoSequencia += 1; Serial.println(posicaoSequencia);}
-  
    switch(posicaoSequencia)
   {
     case 1:
@@ -81,5 +56,48 @@ void VerificarSequencia()
     SequenciaDois(500);
     break;
   }
-  if(posicaoSequencia > 5){ posicaoSequencia = 0; Serial.println(posicaoSequencia);} 
-  }
+}
+
+void Sequencia(int delayTime)
+{
+  digitalWrite(ledA,HIGH);
+  digitalWrite(ledB,HIGH);
+  digitalWrite(ledC,HIGH);
+  digitalWrite(ledD,HIGH);
+  
+  delay(delayTime);
+
+  digitalWrite(ledA,LOW);
+  digitalWrite(ledB,LOW);
+  digitalWrite(ledC,LOW);
+  digitalWrite(ledD,LOW);
+
+  delay(delayTime);
+}
+
+void SequenciaDois(int SecondDelay)
+{
+  digitalWrite(ledA,HIGH);
+  delay(SecondDelay);
+
+  digitalWrite(ledB,HIGH);
+  delay(SecondDelay);
+
+  digitalWrite(ledC,HIGH);
+  delay(SecondDelay);
+
+  digitalWrite(ledD,HIGH);
+  delay(SecondDelay); 
+
+  digitalWrite(ledA,LOW);
+  delay(SecondDelay);
+  
+  digitalWrite(ledB,LOW);
+  delay(SecondDelay);
+  
+  digitalWrite(ledC,LOW);
+  delay(SecondDelay);
+  
+  digitalWrite(ledD,LOW);
+  delay(SecondDelay);
+}
