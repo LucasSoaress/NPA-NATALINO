@@ -1,4 +1,4 @@
-# NAVE de Portas Abertas NATALINO
+# NAVE de Portas Abertas NATALINO - 2016
 Para oficina no NAVE de portas abertas, o grupo NAVE LABS, desenvolveu este projeto que simula um pisca-pisca para mostrar o uso da robótica e que cada pessoa possa fazer seus projetos.
 
 <h2>Pisca-pisca</h2>
@@ -24,9 +24,9 @@ Utilizando apenas leds e um botão, este projeto simula um exemplo de pisca-pisc
 <h3>NAVE LABS</h3>
 Grupo de pesquisa e disseminação de robótica, composto por alunos e professores do curso de programação.
 
-[Lucas Soares,](https://www.google.com)
-[Luca Alves,](https://www.google.com)
-[Patrick Scoralick &](https://www.google.com)
-[José Augusto](https://www.google.com)
+[Lucas Soares,](https://www.facebook.com/soare.lucas)
+[Luca Alves,](https://www.facebook.com/luca.alves.737?fref=ts)
+[Patrick Scoralick &](https://www.facebook.com/patrickscoralick.costa?fref=ts)
+[José Augusto](https://www.facebook.com/zecasaitou.augusto?fref=ts)
 
-[Facebook NAVE LABS](https://www.google.com)
+[Facebook NAVE LABS](https://www.facebook.com/NAVELabs/?fref=ts)
