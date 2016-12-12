@@ -7,6 +7,10 @@ Utilizando apenas leds e um botão, este projeto simula um exemplo de pisca-pisc
 
 
 
+![alt tag](https://github.com/LucasSoaress/NPA-NATALINO/blob/master/esquema.PNG)
+
+
+
 <h2>Material necessário</h2>
 
 - 4 leds
